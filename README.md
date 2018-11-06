@@ -15,4 +15,4 @@ This app does not save your private key or password.  If you remember them, you 
 - Development: ```npm run start```
 - Production: ```npm run build``` This will produce a dist folder.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Electron project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
