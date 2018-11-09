@@ -1,0 +1,71 @@
+/*fONTS CONTENTS IN THE QUILL TOOLBAR DROPDOWN LIST NEED TO BE CHANGED BY BELOW CSS */
+/*--- Sans-Serif ----*/
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=sans-serif]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=sans-serif]::before {
+    content: 'Sans-Serif';
+    font-family: sans-serif;
+}
+
+/*--- Sofia ----*/
+.ql-font-sofia {
+    font-family: 'Sofia', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=sofia]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=sofia]::before {
+    content: 'Sofia';
+    font-family: 'Sofia', sans-serif;
+}
+
+/*--- Inconsolata ----*/
+.ql-font-inconsolata {
+    font-family: 'Inconsolata', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=inconsolata]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=inconsolata]::before {
+    content: 'Inconsolata';
+    font-family: 'Inconsolata', sans-serif;
+}
+
+/*--- Roboto ----*/
+.ql-font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=roboto]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=roboto]::before {
+    content: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+}
+
+/*--- Mirza ----*/
+.ql-font-mizra {
+    font-family: 'Mirza', sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=mirza]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=mirza]::before {
+    content: 'Mirza';
+    font-family: 'Mirza', sans-serif;
+}
+
+
+.ql-toolbar {
+    min-width: 500px;
+}
+
+.ql-editor {
+    width: 100%;
+    padding-top: 20px;
+}
+/*
+.ql-editor .ql-video {
+  width: auto !important;
+  height: auto !important;
+} */
+
+.quill-editor iframe {
+    pointer-events: none;
+}
