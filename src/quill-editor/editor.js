@@ -7,7 +7,7 @@ import BlotFormatter from 'quill-blot-formatter'
 
 var Font = Quill.import('formats/font');
 // We do not add Sans Serif since it is the default
-Font.whitelist = ['sans-serif', 'inconsolata', 'roboto', 'mirza', 'sofia']
+Font.whitelist = ['Montserrat', 'inconsolata', 'roboto', 'mirza', 'sofia']
 
 Quill.register(Font, true)
 Quill.register('modules/blotFormatter', BlotFormatter)
@@ -35,7 +35,7 @@ export default class Editor extends Component {
       [{ 'header': [1, 2, 3, 4, 5, 6, false] }],       // header dropdown
       [{ 'color': ['white', 'red', 'green', 'yellow','blue', '#3293ca', '#575452'] },
        { 'background': ['white', 'red', 'green', 'yellow','blue', '#3293ca','#575452'] }], // dropdown with defaults
-      [{ 'font': ['sans-serif', 'inconsolata', 'roboto', 'mirza', 'sofia'] }],                                // font family
+      [{ 'font': ['Montserrat', 'inconsolata', 'roboto', 'mirza', 'sofia'] }],                                // font family
       [{ 'align': [] }],                               // text align
       ['image', 'video', 'link'],
       ['clean'],                                       // remove formatting
@@ -55,7 +55,7 @@ export default class Editor extends Component {
     return (
       <div className={this.props.className}>
         { this.props.readOnly ?
-          <div dangerouslySetInnerHTML={{__html: this.props.value }}/>
+          <div className={ this.props.value ? "ql-editor border p-2" : "p-0" } dangerouslySetInnerHTML={{__html: this.props.value }}/>
           :
           <ReactQuill
             modules={this.modules}
@@ -67,8 +67,7 @@ export default class Editor extends Component {
           />
         }
       </div>
-      
-    )
+    );
   }
 }
 

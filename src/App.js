@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import WebFont from 'webfontloader';
-import { Button } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import './App.css';
 import Editor from './quill-editor/editor';
 const fs = window.require('fs');
 const electron = window.require("electron");
 const { dialog } = electron.remote;
 
-const fontsList = ['Open Sans','Latin', 'Maven Pro', 'Raleway', 'Montserrat','Roboto','Sofia'];
+const fontsList = ['sans-serif', 'inconsolata', 'Open Sans','Latin', 'Maven Pro', 'Raleway', 'Montserrat','Roboto','Sofia'];
 
 WebFont.load({
   google: {
@@ -30,7 +30,6 @@ class App extends Component {
           console.log('error occured when creating the file.');
           return;
         }
-        alert('File successfully saved.');
       });
     } else {
       dialog.showSaveDialog((filename) => {
@@ -43,7 +42,6 @@ class App extends Component {
             console.log('error occured when creating the file.');
             return;
           }
-          alert('File successfully created.');
         });
       });
     }
@@ -94,37 +92,43 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Note Taker</h1>
-        <Editor
-          className="ql-editor"
-          value={this.state.value}
-          handleTextChange={this.handleTextChange}
-          readOnly={this.state.readOnly}
-        />
-        {
-          this.state.value &&
-          <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>{ this.state.readOnly ? 'Edit' : 'ReadOnly' }</Button>
-        }
-        {
-          !this.state.readOnly &&
-          <Button color="success" className="m-2" onClick={this.saveFile}>{this.state.selectedFile ? "Save" : "Save As" }</Button>
-        }
-        {
-          !this.state.readOnly &&
-          <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
-        }
-        {
-          this.state.selectedFile && this.state.readOnly &&
-          <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
-        }
-        {
-          this.state.readOnly &&
-          <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>New</Button>
-        }
-        {
-          this.state.readOnly &&
-          <Button color="warning" className="m-2" onClick={this.openFile}>Open {this.state.selectedFile ? "another file" : "a file" }</Button>
-        }
+        <Container>
+          <Row>
+            <Col>
+              <h1 className="pt-5">Note Taker</h1>
+              <Editor
+                className="ql-editor"
+                value={this.state.value}
+                handleTextChange={this.handleTextChange}
+                readOnly={this.state.readOnly}
+              />
+              {
+                this.state.value &&
+                <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>{ this.state.readOnly ? 'Edit' : 'ReadOnly' }</Button>
+              }
+              {
+                !this.state.readOnly &&
+                <Button color="success" className="m-2" onClick={this.saveFile}>{this.state.selectedFile ? "Save" : "Save As" }</Button>
+              }
+              {
+                this.state.readOnly &&
+                <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>New</Button>
+              }
+              {
+                this.state.readOnly &&
+                <Button color="warning" className="m-2" onClick={this.openFile}>Open {this.state.selectedFile ? "another file" : "a file" }</Button>
+              }
+              {
+                !this.state.readOnly &&
+                <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
+              }
+              {
+                this.state.selectedFile && this.state.readOnly &&
+                <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
+              }
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

@@ -1,10 +1,21 @@
 /*fONTS CONTENTS IN THE QUILL TOOLBAR DROPDOWN LIST NEED TO BE CHANGED BY BELOW CSS */
+
+/*--- Montserrat ----*/
+.ql-font-Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Montserrat]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Montserrat]::before {
+    content: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;;
+}
+
 /*--- Sans-Serif ----*/
 
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=sans-serif]::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=sans-serif]::before {
     content: 'Sans-Serif';
-    font-family: sans-serif;
+    font-family: 'Sans-Serif', sans-serif;
 }
 
 /*--- Sofia ----*/
