@@ -1,5 +1,5 @@
 {
-  "name": "password-generator",
+  "name": "note-taker",
   "version": "0.1.1",
   "author": "Noby Fujioka",
   "private": true,
@@ -42,7 +42,7 @@
     "wait-on": "^3.1.0"
   },
   "build": {
-    "appId": "com.password-generator.electron-cra",
+    "appId": "com.note-taker.electron-cra",
     "files": [
       "build/**/*",
       "node_modules/**/*"

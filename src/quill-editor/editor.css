@@ -69,3 +69,7 @@
 .quill-editor iframe {
     pointer-events: none;
 }
+
+span.blot-formatter__toolbar-button {
+    display: none !important;
+}
