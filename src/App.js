@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WebFont from 'webfontloader';
+import { Button } from 'reactstrap';
 import './App.css';
 import Editor from './quill-editor/editor';
 const fs = window.require('fs');
@@ -102,25 +103,28 @@ class App extends Component {
         />
         {
           this.state.value &&
-          <button onClick={this.toggleReadOnly}>{ this.state.readOnly ? 'Edit' : 'ReadOnly' }</button>
+          <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>{ this.state.readOnly ? 'Edit' : 'ReadOnly' }</Button>
         }
         {
           !this.state.readOnly &&
-          <button onClick={this.saveFile}>{this.state.selectedFile ? "Save" : "Save As" }</button>
+          <Button color="success" className="m-2" onClick={this.saveFile}>{this.state.selectedFile ? "Save" : "Save As" }</Button>
         }
         {
           !this.state.readOnly &&
-          <button onClick={this.closeFile}>Close file</button>
+          <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
         }
         {
           this.state.selectedFile && this.state.readOnly &&
-          <button onClick={this.closeFile}>Close file</button>
+          <Button color="danger" className="m-2" onClick={this.closeFile}>Close file</Button>
         }
         {
-          this.state.readOnly && !this.state.selectedFile &&
-          <button onClick={this.toggleReadOnly}>New</button>
+          this.state.readOnly &&
+          <Button color="primary" className="m-2" onClick={this.toggleReadOnly}>New</Button>
         }
-        <button onClick={this.openFile}>Open {this.state.selectedFile ? "another file" : "a file" }</button>
+        {
+          this.state.readOnly &&
+          <Button color="warning" className="m-2" onClick={this.openFile}>Open {this.state.selectedFile ? "another file" : "a file" }</Button>
+        }
       </div>
     );
   }

@@ -4,6 +4,7 @@
   "author": "Noby Fujioka",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.1.3",
     "cross-env": "^5.2.0",
     "crypto-js": "^3.1.9-1",
     "electron-is-dev": "^1.0.1",
@@ -12,6 +13,7 @@
     "react-dom": "^16.6.0",
     "react-quill": "^1.3.2",
     "react-scripts": "2.1.1",
+    "reactstrap": "^6.5.0",
     "webfontloader": "^1.6.28"
   },
   "main": "public/electron.js",
